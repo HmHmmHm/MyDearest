@@ -2,4 +2,4 @@ name: MyDearest
 main: ifteam\MyDearest\MyDearest
 author: ifteam
 api: [1.4.1]
-version: 1.0-alpha
+version: 1.1-alpha
