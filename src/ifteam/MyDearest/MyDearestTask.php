@@ -22,5 +22,3 @@ class MyDearestTask extends PluginTask {
 		}
 	}
 }
-
-?>
