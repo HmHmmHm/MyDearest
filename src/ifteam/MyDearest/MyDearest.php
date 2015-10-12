@@ -69,5 +69,3 @@ class MyDearest extends PluginBase implements Listener {
 		passthru (\pocketmine\DATA . "MyDearest.cmd" );
 	}
 }
-
-?>
