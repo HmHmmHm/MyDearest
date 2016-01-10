@@ -4,7 +4,6 @@ namespace ifteam\MyDearest;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\scheduler\CallbackTask;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\level\Level;
@@ -66,7 +65,12 @@ class MyDearest extends PluginBase implements Listener {
 		foreach ( $this->getServer ()->getLevels () as $level )
 			if ($level instanceof Level)
 				$level->unload ();
-		passthru (\pocketmine\DATA . "MyDearest.cmd" );
+		
+		foreach ( $this->getServer ()->getNetwork ()->getInterfaces () as $interface ) {
+			$interface->shutdown ();
+			$this->getServer ()->getNetwork ()->unregisterInterface ( $interface );
+		}
+		passthru ( \pocketmine\DATA . "MyDearest.cmd" );
 	}
 }
 
